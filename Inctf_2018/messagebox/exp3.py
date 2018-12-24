@@ -43,7 +43,17 @@ IPS =[
 ]
 c = 0
 def submit_flag(flag):
-	global c;
+	global c
+	f  =  open("log.f","r")
+	flags = f.readlines()
+	for i in flags:
+		if(i==flag+'\n'):
+			return
+	f.close()
+	f = open("log.f","a")
+	f.write(flag)
+	f.close()
+	c = c+1
 	url = "http://10.115.0.2:8000/flag"
 	data = json.dumps({"flag": flag})
 	# if the team name is bi0s and password is bi0s - you need base64 of "bi0s:bi0s"

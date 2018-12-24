@@ -75,6 +75,7 @@ void readfile(char* filename)
   strcat(ptr, filename);
   system(ptr);
   free(ptr);
+  printf("\n");
 }
 
 int check_existence(char* username, bool* exists)
@@ -82,7 +83,6 @@ int check_existence(char* username, bool* exists)
   int flag=0;
   for(int i=0;i<count;i++)
   {
-    printf("%s %s", username,files[i]);
     if(!strcmp(username, files[i]))
     {
       exists[i]=true;
