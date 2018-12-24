@@ -30,6 +30,6 @@ Hello World
 </code>
 </pre>
 <p style="font-color:red">Let us find our search for finding the vulnerabilities... </p>
-<p> Oh wait! Do we have to reverse engineer the binary :flushed:? No, we got the source code there :relieved:. Now our only task is to find the vulnerabilities in the source code.</p>
+<p> Oh wait! Do we have to reverse engineer the binary :flushed:? No, we got the source code there. :relieved: Now our only task is to find the vulnerabilities in the source code.</p>
 <p> Let us see the the source code <a href="message.c">message.c</a></p>
 
