@@ -46,13 +46,13 @@ void readfile(char* filename)
 }
 </pre></code>
 <p> Are you able to find any vulnerabilities there????</p>
-<p> Yes, there it is *cat* and *system* call</p>
+<p> Yes, there it is <b>cat</b> and <b>system</b> call</p>
 <p> To read the file called filename from the local directory it is using cat command. Here filename is nothing but the username which we have given.</p>
-### Bug 1
+<h3>Bug 1</h3>
 username = *
 <p> what if we gave the username as *. It just read all the files in the current directory</p>
-### Bug 2
-username = \*; sh
+<h3>Bug 2</h3>
+username = *; sh
 <pre>
 <code>
 cat *; sh
