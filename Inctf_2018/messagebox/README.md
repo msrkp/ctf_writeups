@@ -68,7 +68,7 @@ void view(char* user)
   int len;
   int flag=0;
   listdir();
-  for(int i=0;i<count;i++)
+  for(int i=0; i<count ;i++)
   {
     len=strlen(user);
     if(!strncmp(user, files[i], len))
