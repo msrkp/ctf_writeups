@@ -4,8 +4,7 @@
 <p>service is  running on port <code>5050</code></p>
 
 <p>Actually, it asks username and read/write the file name with that username.</p>
-<<<<<<< HEAD
-=======
+
 <pre>
 <code>
 $ ./message
@@ -30,8 +29,7 @@ Your choice: 2
 Hello World
 </code>
 </pre>
->>>>>>> 6ff325036484f220d367b6983455a191c6a13fc0
-
+<p style="font-color:red">Let us find our search for finding the vulnerabilities </p>
 
 
 
