@@ -46,17 +46,15 @@ c = 0
 
 def submit_flag(flag):
 	url = "http://10.115.0.2:8000/flag"
-	f = open("log.f","r")
-	for i in f.readlines():
-		fl = flag+"\n"
-		if fl == i:
+	f  =  open("log.f","r")
+	flags = f.readlines()
+	for i in flags:
+		if(i==flag+'\n'):
 			return
-		else:
-			pass
 	f.close()
 	f = open("log.f","a")
-	f.write(flag+"\n")
-	c = c+1
+	f.write(flag)
+	f.close()
 
 	data = json.dumps({"flag": flag})
 	# if the team name is bi0s and password is bi0s - you need base64 of "bi0s:bi0s"
