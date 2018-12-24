@@ -1,4 +1,4 @@
 all:
-		gcc messagebox.c -o messagebox
+		gcc message.c -o message
 clean:
-		rm messagebox
+		rm message
