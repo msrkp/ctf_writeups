@@ -29,7 +29,7 @@ Your choice: 2
 Hello World
 </code>
 </pre>
-<p style="font-color:red">Let us find our search for finding the vulnerabilities </p>
-
+<p style="font-color:red">Let us find our search for finding the vulnerabilities... </p>
+<p> Oh wait! Do we have to reverse engineer the binary :flushed? No, we got the source code there <3</p>
 
 
