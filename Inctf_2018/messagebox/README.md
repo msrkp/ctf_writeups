@@ -95,17 +95,17 @@ void view(char* user)
 
 void save(char* user)
 {
-  listdir(); //storing the list of files in the data directory in the global variable named files
-  char* temp=(char*)malloc(50*sizeof(char)); //allocating 50 bytes on the heap.
-  bool* exist=(bool*)malloc(count*sizeof(bool)); //allocating n bytes on the heap, here n is number of files in the directory.
+  listdir(); /*storing the list of files in the data directory in the global variable named files*/
+  char* temp=(char*)malloc(50*sizeof(char)); /*allocating 50 bytes on the heap.*/
+  bool* exist=(bool*)malloc(count*sizeof(bool)); /*allocating n bytes on the heap, here n is number of files in the directory.*/
   int size=0;
   if(!check_existence(user,exist))
   {
     FILE *fp;
     fp=fopen(user, "w");
-    printf("Enter size ( < 50): "); //wtf
+    printf("Enter size ( < 50): "); /* wtf */
     size=getint();
-    if(size > = 50) //we need to somehow bypass this constraint
+    if(size > = 50) /* we need to somehow bypass this constraint */
     {
       puts("Sorry, Your data is too big!");
       exit(0);
@@ -122,7 +122,7 @@ void save(char* user)
   }
   for(int i=0;i < count;i++)
   {
-    if(exist[i]) //change the value of exist[i] other than 0, so we can read the files in the directory.
+    if(exist[i]) /* change the value of exist[i] other than 0, so we can read the files in the directory. */
     {
       readfile(files[i]);
     }
@@ -134,9 +134,8 @@ void save(char* user)
 </code></pre>
 <p> If you look at keenly, the allocation of <b>exist(bool)</b> is just after the allocation of <b>temp</b>. So overflowing temp, we can overwrite the exist array with any value other than 0.</p>
 <p>There is a constrain that the size of temp must be < 50. So we can bypass this by giving size = -1 (0xffffffff).</p>
-  <p> Now we can use pwn tools to do the automation stuff.</p>
-  <p> exploit : <a href = "exp4.py">exp4.py</a></p>
-  
-  
+<p> Now we can use pwn tools to do the automation stuff.</p>
+<p> exploit : <a href = "exp4.py">exp4.py</a></p>
+ 
  :relieved: 
   
