@@ -96,9 +96,12 @@ void view(char* user)
 void save(char* user)
 {
 &nbsp;&nbsp;listdir(); //storing the list of files in the data directory in the global variable named files
+
 &nbsp;&nbsp;char* temp=(char*)malloc(50*sizeof(char)); //allocating 50 bytes on the heap.
 &nbsp;&nbsp;bool* exist=(bool*)malloc(count*sizeof(bool)); //allocating n bytes on the heap, here n is number of files in the directory.
+
 &nbsp;&nbsp;int size=0;
+
 &nbsp;&nbsp;if(!check_existence(user,exist))
 &nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;FILE *fp;
@@ -116,10 +119,12 @@ void save(char* user)
 &nbsp;&nbsp;&nbsp;&nbsp;fclose(fp);
 &nbsp;&nbsp;&nbsp;&nbsp;puts("Input saved successfully.");
 &nbsp;&nbsp;}
+
 &nbsp;&nbsp;else
 &nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;puts("save: Permission denied. You can only view :- ");
 &nbsp;&nbsp;}
+
 &nbsp;&nbsp;for(int i=0;i < count;i++)
 &nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;if(exist[i])  //change the value of exist[i] other than 0, so we can read the files in the directory. 
@@ -127,6 +132,7 @@ void save(char* user)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readfile(files[i]);
 &nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;}
+
 &nbsp;&nbsp;return;
 }
 
