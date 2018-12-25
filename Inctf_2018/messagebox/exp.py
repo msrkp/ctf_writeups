@@ -44,6 +44,15 @@ IPS =[
 
 
 def submit_flag(flag):
+	f  =  open("log.f","r")
+	flags = f.readlines()
+	for i in flags:
+		if(i==flag+'\n'):
+			return
+	f.close()
+	f = open("log.f","a")
+	f.write(flag)
+	f.close() 
 	url = "http://10.115.0.2:8000/flag"
 	data = json.dumps({"flag": flag})
 	header = {"Authorization": 'Basic <username:password>'}
