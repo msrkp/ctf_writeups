@@ -50,11 +50,13 @@ void readfile(char* filename)
 <p> To read the file called filename from the local directory it is using cat command. Here filename is nothing but the username which we have given.</p>
 <h3>Bug 1</h3>
 username = *
-exploit : <a href="exp.py">exp.py</a>
+<p>
+exploit : <a href="exp.py">exp.py</a></p>
 <p> what if we give the username as *. It just read all the files in the current directory</p>
 <h3>Bug 2</h3>
 username = *; sh
-exploit : <a href="exp3.py">exp3.py</a>
+<p>
+exploit : <a href="exp3.py">exp3.py</a></p>
 <pre>
 <code>
 cat *; sh
@@ -82,4 +84,6 @@ void view(char* user)
 }
 </code></pre>
 <p> Another bug if we give empty username as input then strncmp("",files[i],0) is always 0. </p>
-exploit : <a href="exp2.py">exp2.py</a>
+<p>exploit : <a href="exp2.py">exp2.py</a></p>
+<p>Here is the final bug, my favorite one</p>
+<h3>Bug 4 (Bufferoverflow)</h3>
