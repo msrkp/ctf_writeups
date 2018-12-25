@@ -91,7 +91,7 @@ void view(char* user)
 <hr/>
 <p>Here is the final bug and my favorite one</p>
 <h3>Bug 4 (Bufferoverflow)</h3>
-<pre><code>
+```c
 void save(char* user)
 {
   listdir();//stores list of files in the global variable called <b>files</b>
@@ -132,7 +132,7 @@ void save(char* user)
   }
   return;
 }
-</code></pre>
+```
 <p> If you look at keenly, the allocation of <b>exist(bool)</b> is just after the allocation of <b>temp</b>. So overflowing temp, we can overwrite the exist array with any value other than 0.</p>
 <p>There is a constrain that the size of temp must be < 50. So we can bypass this by giving size = -1 (0xffffffff).</p>
   <p> Now we can use pwn tools to do the automation stuff.</p>
