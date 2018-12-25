@@ -3,7 +3,7 @@
 <p>messagebox is a tcp server which allows us to read and save files in directory named data.</p>
 <p>service is  running on port <code>5050</code></p>
 
-<p>Actually, it asks username and read/write the file name with that username.</p>
+<p>Actually, it asks username and read/write the file with that username.</p>
 
 <pre>
 <code>
@@ -29,7 +29,7 @@ Your choice: 2
 Hello World
 </code>
 </pre>
-<p style="font-color:red">Let us find our search for finding the vulnerabilities... </p>
+<p style="font-color:red">Let us start our search for finding the vulnerabilities... </p>
 <p> Oh wait! Do we have to reverse engineer the binary? :flushed: No, we got the source code there. :relieved: Now our only task is to find the vulnerabilities in the source code <a href="message.c">message.c</a>.</p>
 
 <pre><code>
