@@ -94,10 +94,10 @@ void view(char* user)
 <pre><code>
 void save(char* user)
 {
-  listdir();//stores list of files in the global variable called <b>files</b>
+  listdir();/*stores list of files in the global variable called <b>files</b>*/
 
-  char* temp=(char*)malloc(50*sizeof(char)); //allocating 50 bytes on the heap, have a close look on this(bufferoverflow).
-  bool* exist=(bool*)malloc(count*sizeof(bool));//allocating n bytes on the heap, here n is number files in the directory
+  char* temp=(char*)malloc(50*sizeof(char)); /* allocating 50 bytes on the heap, have a close look on this(bufferoverflow). */
+  bool* exist=(bool*)malloc(count*sizeof(bool));/* allocating n bytes on the heap, here n is number files in the directory. */
   int size=0;
 
 
@@ -105,9 +105,9 @@ void save(char* user)
   {
     FILE *fp;
     fp=fopen(user, "w");
-    printf("Enter size (<50): ");//wtf
-    size=getint();//
-    if(size>=50)//find a way to bypass this constraint
+    printf("Enter size (<50): ");/* wtf */
+    size=getint();
+    if(size>=50) /* find a way to bypass this constraint */
     {
       puts("Sorry, Your data is too big!");
       exit(0);
@@ -125,7 +125,7 @@ void save(char* user)
 
   for(int i=0;i<count;i++)
   {
-    if(exist[i])//we need to somehow change exist[i] to somevalue, so that we can read the files in the directory.
+    if(exist[i])/* we need to somehow change exist[i] to somevalue, so that we can read the files in the directory. */
     {
       readfile(files[i]);
     }
