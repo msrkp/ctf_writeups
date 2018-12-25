@@ -91,3 +91,46 @@ void view(char* user)
 <hr/>
 <p>Here is the final bug and my favorite one</p>
 <h3>Bug 4 (Bufferoverflow)</h3>
+<pre><code>
+void save(char* user)
+{
+  listdir();//stores list of files in the global variable called <b>files</b>
+
+  char* temp=(char*)malloc(50*sizeof(char)); //allocating 50 bytes on the heap, have a close look on this(bufferoverflow).
+  bool* exist=(bool*)malloc(count*sizeof(bool));//allocating n bytes on the heap, here n is number files in the directory
+  int size=0;
+
+
+  if(!check_existence(user,exist))
+  {
+    FILE *fp;
+    fp=fopen(user, "w");
+    printf("Enter size (<50): ");//wtf
+    size=getint();//
+    if(size>=50)//find a way to bypass this constraint
+    {
+      puts("Sorry, Your data is too big!");
+      exit(0);
+    }
+    printf("Enter input: ");
+    get_inp(temp, size);//:heart_eyes :
+    fprintf(fp, "%s", temp);
+    fclose(fp);
+    puts("Input saved successfully.");
+  }
+  else
+  {
+    puts("save: Permission denied. You can only view :- ");
+  }
+
+  for(int i=0;i<count;i++)
+  {
+    if(exist[i])//we need to somehow change exist[i] to somevalue, so that we can read the files in the directory.
+    {
+      readfile(files[i]);
+    }
+  }
+
+  return;
+}
+</code></pre>
