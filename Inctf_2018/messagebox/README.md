@@ -113,7 +113,7 @@ void save(char* user)
       exit(0);
     }
     printf("Enter input: ");
-    get_inp(temp, size);//:heart_eyes :
+    get_inp(temp, size);//:heart_eyes:
     fprintf(fp, "%s", temp);
     fclose(fp);
     puts("Input saved successfully.");
