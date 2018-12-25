@@ -95,19 +95,16 @@ void view(char* user)
 void save(char* user)
 {
   listdir();
-
   char* temp=(char*)malloc(50*sizeof(char));
   bool* exist=(bool*)malloc(count*sizeof(bool));
   int size=0;
-
-
   if(!check_existence(user,exist))
   {
     FILE *fp;
     fp=fopen(user, "w");
-    printf("Enter size (<50): ");
+    printf("Enter size ( < 50): ");
     size=getint();
-    if(size>=50)
+    if(size > = 50)
     {
       puts("Sorry, Your data is too big!");
       exit(0);
@@ -122,15 +119,13 @@ void save(char* user)
   {
     puts("save: Permission denied. You can only view :- ");
   }
-
-  for(int i=0;i<count;i++)
+  for(int i=0;i < count;i++)
   {
     if(exist[i])
     {
       readfile(files[i]);
     }
   }
-
   return;
 }
 
