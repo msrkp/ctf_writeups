@@ -95,7 +95,7 @@ void view(char* user)
 
 void save(char* user)
 {
-  listdir(); //storing the list of files in the data directory in the global variable named files
+ &nbsp;&nbsp; listdir(); //storing the list of files in the data directory in the global variable named files
   char* temp=(char*)malloc(50*sizeof(char)); allocating 50 bytes on the heap.
   bool* exist=(bool*)malloc(count*sizeof(bool)); allocating n bytes on the heap, here n is number of files in the directory.
   int size=0;
