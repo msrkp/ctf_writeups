@@ -53,7 +53,7 @@ username = *
 <p>
 exploit : <a href="exp.py">exp.py</a></p>
 <p> what if we give the username as *. It just read all the files in the current directory</p>
-<hr>
+<hr style="border-top: dotted 1px;" />
 <h3>Bug 2</h3>
 username = *; sh
 <p>
@@ -64,7 +64,7 @@ cat *; sh
 </code>
 </pre>
 <p> we can get the shell by ending first command by <b>;</b></p>
-<hr>
+<hr style="border-top: dotted 1px;" />
 <h3>Bug 3</h3>
 <pre><code>
 void view(char* user)
@@ -87,6 +87,6 @@ void view(char* user)
 </code></pre>
 <p> Another bug if we give empty username as input then strncmp("",files[i],0) is always 0. </p>
 <p>exploit : <a href="exp2.py">exp2.py</a></p>
-<hr>
-<p>Here is the final bug, my favorite one</p>
+<hr style="border-top: dotted 1px;" />
+<p>Here is the final bug and my favorite one</p>
 <h3>Bug 4 (Bufferoverflow)</h3>
