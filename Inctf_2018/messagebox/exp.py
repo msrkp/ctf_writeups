@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+import sysr
 from pwn import *
 import string
 import random

