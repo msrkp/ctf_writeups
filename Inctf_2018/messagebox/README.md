@@ -65,6 +65,7 @@ cat *; sh
 </code>
 </pre>
 <p> we can get the shell by ending first command by <b>;</b></p>
+<p> Patch for above bugs : Rather than using dangerous system call, we can just read the files in the directory by file handling in C language.
 <hr/>
 <h3>Bug 3</h3>
 <pre><code>
@@ -88,6 +89,7 @@ void view(char* user)
 </code></pre>
 <p> Another bug if we give empty username as input then strncmp("",files[i],0) is always 0. </p>
 <p>exploit : <a href="exp2.py">exp2.py</a></p>
+<p> Patch : Simple patch can be user input must be some length.</p>
 <hr/>
 <p>Here is the final bug and my favorite one</p>
 <h3>Bug 4 (Bufferoverflow)</h3>
@@ -142,6 +144,9 @@ void save(char* user)
 <p>There is a constrain that the size of temp must be < 50. So we can bypass this by giving size = -1 (0xffffffff).</p>
 <p> Now we can use pwn tools to do the automation stuff.</p>
 <p> exploit : <a href = "exp4.py">exp4.py</a></p>
+ <p>Patch: It is just enough to change unsigned int to int in the getint function.</p>
  
  :relieved: 
+ 
+ 
   
