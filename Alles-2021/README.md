@@ -103,7 +103,7 @@ POC: Below messages inserts iframe with href as url in the chat.
 ```
 
 ### Note
-At this point, you might think that using iframe injection to download file and creating another iframe which points to that file will solve challenge, but there is an issue. `will-download` is only triggered from mainWindow. So, we can't solve the challenge in this way
+At this point, you might think that using iframe injection to download file and creating another iframe which points to that file will solve challenge, but there is an issue. `will-download` is only triggered from mainWindow(because of sandbox being enabled in iframes). So, we can't solve the challenge in this way
 
 ### Including Local Files in Iframe
 What we can do is, somehow create html file (lets assume file:///test.html) in the victim's system and load it in the iframe. 
