@@ -2,10 +2,6 @@
 
 
 
-## ALLES!Chat
->What could possibly g# Alles CTF 2021
-
-
 I started Alles CTF with an intent to understand SOLANA blockchain, because there are solana challenges. So, me and [S3v3ru5_](https://twitter.com/S3v3ru5_) started working on blockchain-secret-store. Then [PewGrand](https://twitter.com/PewGrand) told me that there was an electron challenge, I was excited and started working on it because electron applications are fun 😁. 
 
 ## ALLES!Chat
